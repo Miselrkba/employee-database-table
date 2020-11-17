@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-function EditUser({ currentUser, updateUser, setEditing, props }) {
+function EditUser({ currentUser, updateUser, setEditing }) {
   const [user, setUser] = useState(currentUser);
 
   const handleInputChange = (event) => {
@@ -11,13 +11,12 @@ function EditUser({ currentUser, updateUser, setEditing, props }) {
 
   useEffect(() => {
     setUser(currentUser);
-  }, [props]);
+  }, [currentUser]);
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-
         updateUser(user.id, user);
       }}
     >
@@ -50,7 +49,7 @@ function EditUser({ currentUser, updateUser, setEditing, props }) {
         onChange={handleInputChange}
       />
       <button>Update user</button>
-      <button onClick={() => setEditing(false)}>Cancel</button>
+      <button type='button' onClick={() => setEditing(false)}>Cancel</button>
     </form>
   );
 }

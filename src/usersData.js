@@ -1,4 +1,4 @@
-import {nanoid} from 'nanoid'
+import { nanoid } from "nanoid";
 
 export const usersData = [
   {
@@ -33,34 +33,6 @@ export const usersData = [
     id: nanoid(),
     firstName: "Tom",
     lastName: "Hardy",
-    email: "roblaw@gmail.com",
-    telephone: "123135",
-  },
-  {
-    id: nanoid(),
-    firstName: "James",
-    lastName: "Bond",
-    email: "roblaw@gmail.com",
-    telephone: "123135",
-  },
-  {
-    id: nanoid(),
-    firstName: "James",
-    lastName: "Bond",
-    email: "roblaw@gmail.com",
-    telephone: "123135",
-  },
-  {
-    id: nanoid(),
-    firstName: "James",
-    lastName: "Bond",
-    email: "roblaw@gmail.com",
-    telephone: "123135",
-  },
-  {
-    id: nanoid(),
-    firstName: "James",
-    lastName: "Bond",
     email: "roblaw@gmail.com",
     telephone: "123135",
   },
