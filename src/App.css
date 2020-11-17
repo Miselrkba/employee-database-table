@@ -12,14 +12,16 @@ body {
   text-align: center;
 }
 
-.table {
-  /* margin: 2em; */
-  /* overflow: auto !important;
-  max-height: 68vh;
-  display: table; */
-  overflow: auto!important;
+.table-container {
+  display: block;
+  overflow: auto;
+  max-height: 80vh;
 }
 
-.container-fluid{
-  overflow: auto!important;
+.header-container {
+  margin: 1em auto;
+}
+
+.add-button-container {
+  margin: 1em auto;
 }

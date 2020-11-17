@@ -43,4 +43,25 @@ export const usersData = [
     email: "roblaw@gmail.com",
     telephone: "123135",
   },
+  {
+    id: nanoid(),
+    firstName: "James",
+    lastName: "Bond",
+    email: "roblaw@gmail.com",
+    telephone: "123135",
+  },
+  {
+    id: nanoid(),
+    firstName: "James",
+    lastName: "Bond",
+    email: "roblaw@gmail.com",
+    telephone: "123135",
+  },
+  {
+    id: nanoid(),
+    firstName: "James",
+    lastName: "Bond",
+    email: "roblaw@gmail.com",
+    telephone: "123135",
+  },
 ];

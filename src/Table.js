@@ -76,13 +76,11 @@ function Table() {
     setUsers(users.map((user) => (user.id === id ? updatedUser : user)));
   };
 
-  const toggleAddForm = () => {
-    setShowAddForm(!showAddForm);
-  };
-
   return (
-    <div className='container-fluid'>
-      <h1>Employee Table</h1>
+    <div className="container-fluid">
+      <div className="header-container">
+        <h1>Employee Table</h1>
+      </div>
       {editing ? (
         <div>
           <p>Edit user:</p>
@@ -94,13 +92,15 @@ function Table() {
         </div>
       ) : (
         <div>
-          <button
-            onClick={() => setShowAddForm(!showAddForm)}
-            type="button"
-            className="btn btn-light"
-          >
-            Add new user
-          </button>
+          <div className="add-button-container">
+            <button
+              onClick={() => setShowAddForm(!showAddForm)}
+              type="button"
+              className="btn btn-light"
+            >
+              Add new user
+            </button>
+          </div>
           {showAddForm ? (
             <AddUser
               addUser={addUser}
@@ -111,21 +111,22 @@ function Table() {
           ) : null}
         </div>
       )}
-
-      <table className="table table-hover table-dark ">
-        <thead>
-          <tr>{generateHeaders}</tr>
-        </thead>
-        <tbody>
-          {users.length > 0 ? (
-            generateUserData
-          ) : (
-            <tr>
-              <td colSpan={6}>No users</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      <div className="table-responsive table-container">
+        <table className="table table-hover table-dark ">
+          <thead>
+            <tr>{generateHeaders}</tr>
+          </thead>
+          <tbody>
+            {users.length > 0 ? (
+              generateUserData
+            ) : (
+              <tr>
+                <td colSpan={6}>No users</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
