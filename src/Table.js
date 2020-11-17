@@ -17,6 +17,7 @@ function Table() {
   const [user, setUser] = useState(initialFormState);
   const [editing, setEditing] = useState(false);
   const [currentUser, setCurrentUser] = useState(initialFormState);
+  const [showAddForm, setShowAddForm] = useState(false);
 
   const headers = [
     "First Name",
@@ -75,8 +76,12 @@ function Table() {
     setUsers(users.map((user) => (user.id === id ? updatedUser : user)));
   };
 
+  const toggleAddForm = () => {
+    setShowAddForm(!showAddForm);
+  };
+
   return (
-    <div style={{ margin: "2em" }}>
+    <div className='container-fluid'>
       <h1>Employee Table</h1>
       {editing ? (
         <div>
@@ -89,17 +94,25 @@ function Table() {
         </div>
       ) : (
         <div>
-          <p>Add new user:</p>
-          <AddUser
-            addUser={addUser}
-            setUser={setUser}
-            user={user}
-            initialFormState={initialFormState}
-          />
+          <button
+            onClick={() => setShowAddForm(!showAddForm)}
+            type="button"
+            className="btn btn-light"
+          >
+            Add new user
+          </button>
+          {showAddForm ? (
+            <AddUser
+              addUser={addUser}
+              setUser={setUser}
+              user={user}
+              initialFormState={initialFormState}
+            />
+          ) : null}
         </div>
       )}
 
-      <table className="table table-hover">
+      <table className="table table-hover table-dark ">
         <thead>
           <tr>{generateHeaders}</tr>
         </thead>
